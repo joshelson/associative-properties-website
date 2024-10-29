@@ -6,62 +6,103 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
 }
 
+/* Header */
 header {
     background-color: #7B519D;
     color: #FFF;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .logo {
     width: 100px;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 h1 {
-    font-size: 2em;
-    margin: 10px 0;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 p {
-    margin: 10px 0;
-    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
 }
 
+/* Section Styling */
 section {
-    padding: 20px;
-    margin: 20px;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 h2 {
     color: #7B519D;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.service-item {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-item h3 {
+    color: #7B519D;
+    font-size: 1.2em;
     margin-bottom: 10px;
 }
 
-ul {
-    list-style-type: none;
+.service-item p {
+    font-size: 1em;
+    color: #555;
 }
 
-ul li {
-    margin: 15px 0;
-}
-
-footer {
+/* Contact Section */
+address {
+    font-style: normal;
+    line-height: 1.8;
     text-align: center;
-    background-color: #f1f1f1;
-    padding: 15px;
-    font-size: 0.9em;
+    font-size: 1.1em;
 }
 
-footer a {
+a {
     color: #7B519D;
     text-decoration: none;
 }
 
-footer a:hover {
+a:hover {
     text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #7B519D;
+    color: #FFF;
+    padding: 20px;
+    font-size: 0.9em;
 }
