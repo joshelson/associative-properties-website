@@ -3,62 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Associative Properties, LLC</title>
+    <title>Associative Properties | Colorado & Utah Design Management</title>
+    <meta name="description" content="Premier design and design management services in Colorado and Utah. Specializing in interior design, architectural consulting, project management, and creative direction.">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="Associative Properties Logo" class="logo">
+                <span class="logo-text">Associative Properties</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Header Section -->
-    <header>
-        <img src="images/logo.png" alt="Associative Properties Logo" class="logo">
-        <h1>Associative Properties, LLC</h1>
-        <p>Your Trusted Property Management Partner</p>
-    </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Elevating Design Across the Rockies</h1>
+            <p class="hero-subtitle">Premier design and design management services in Colorado and Utah, creating spaces that inspire and endure.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-secondary">Start Your Project</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">15</span>
+                <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">2</span>
+                <span class="stat-label">States Served</span>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Associative Properties, LLC is a Denver-based property management company dedicated to providing quality service for property owners and tenants. We specialize in the complete management of both residential and commercial properties, ensuring your investments are well cared for and efficiently operated.</p>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Associative Properties</h2>
+                <p class="section-subtitle">Where creativity meets precision in the heart of the Rocky Mountains</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2016, Associative Properties has been at the forefront of design innovation across Colorado and Utah. We specialize in creating harmonious spaces that reflect the unique character of the Mountain West while incorporating cutting-edge design principles and sustainable practices.</p>
+                    <p>Our team brings together expertise in interior design, architectural consulting, project management, and creative direction. We work with residential clients, commercial developers, and hospitality brands to deliver exceptional design solutions that exceed expectations.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-mountain"></i>
+                            <h4>Mountain-Inspired</h4>
+                            <p>Designs that honor the natural beauty of the Rockies</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <h4>Sustainable</h4>
+                            <p>Eco-conscious materials and energy-efficient solutions</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-star"></i>
+                            <h4>Premium Quality</h4>
+                            <p>Exceptional craftsmanship and attention to detail</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Studio Showcase</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <h3>Property Management</h3>
-                <p>End-to-end management of residential and commercial properties, including tenant screening, lease administration, and maintenance coordination.</p>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p class="section-subtitle">Comprehensive design solutions for every project</p>
             </div>
-            <div class="service-item">
-                <h3>Property Marketing</h3>
-                <p>Customized marketing strategies to maximize visibility and occupancy for your properties.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>Complete interior design services from concept to completion. We create functional, beautiful spaces that reflect your lifestyle and vision.</p>
+                    <ul>
+                        <li>Space planning and layout design</li>
+                        <li>Furniture selection and custom pieces</li>
+                        <li>Color palette and material selection</li>
+                        <li>Lighting design and installation</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Architectural Consulting</h3>
+                    <p>Expert architectural guidance for new construction and renovation projects. We ensure your vision is realized with structural integrity.</p>
+                    <ul>
+                        <li>Architectural design and planning</li>
+                        <li>Construction documentation</li>
+                        <li>Building code compliance</li>
+                        <li>Project coordination with contractors</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Comprehensive project management services to ensure your design project stays on time, on budget, and exceeds expectations.</p>
+                    <ul>
+                        <li>Timeline and budget management</li>
+                        <li>Contractor and vendor coordination</li>
+                        <li>Quality control and inspections</li>
+                        <li>Progress reporting and communication</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Creative Direction</h3>
+                    <p>Strategic creative direction for brands and businesses looking to establish a cohesive visual identity and memorable customer experience.</p>
+                    <ul>
+                        <li>Brand identity development</li>
+                        <li>Visual merchandising</li>
+                        <li>Marketing material design</li>
+                        <li>Customer experience optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Furniture Design</h3>
+                    <p>Custom furniture design and fabrication services. We create unique pieces that perfectly complement your space and lifestyle.</p>
+                    <ul>
+                        <li>Custom furniture design</li>
+                        <li>Material selection and sourcing</li>
+                        <li>Local artisan collaboration</li>
+                        <li>Installation and finishing</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Sustainable Design</h3>
+                    <p>Eco-friendly design solutions that minimize environmental impact while maximizing beauty and functionality.</p>
+                    <ul>
+                        <li>Green building materials</li>
+                        <li>Energy-efficient systems</li>
+                        <li>Waste reduction strategies</li>
+                        <li>LEED certification support</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-item">
-                <h3>Maintenance & Repairs</h3>
-                <p>24/7 maintenance and repairs to ensure tenant satisfaction and property longevity.</p>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Design Process</h2>
+                <p class="section-subtitle">A collaborative approach that ensures your vision becomes reality</p>
             </div>
-            <div class="service-item">
-                <h3>Financial Reporting</h3>
-                <p>Transparent and detailed financial statements to keep you informed on the performance of your investment.</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Discovery & Consultation</h3>
+                    <p>We begin with an in-depth consultation to understand your vision, lifestyle, and project requirements. This includes site visits, budget discussions, and timeline planning.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Concept Development</h3>
+                    <p>Our team creates initial concepts, mood boards, and design proposals that align with your vision and budget. We present multiple options for your consideration.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Design Refinement</h3>
+                    <p>Based on your feedback, we refine the design, select materials, and create detailed specifications. This phase includes 3D renderings and material samples.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Implementation</h3>
+                    <p>We manage the entire implementation process, coordinating with contractors, overseeing installations, and ensuring quality control throughout the project.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">05</div>
+                    <h3>Final Reveal</h3>
+                    <p>We present your completed space with final styling and photography. Our relationship continues with post-project support and maintenance guidance.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you’re ready to simplify property management, or have any questions, please reach out to us!</p>
-        <address>
-            <strong>Address:</strong> 1863 Wazee St, 1A, Denver, CO 80202<br>
-            <strong>Phone:</strong> <a href="tel:3039971264">303-997-1264</a><br>
-            <strong>Email:</strong> <a href="mailto:josh@associativeproperties.com">josh@associativeproperties.com</a>
-        </address>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Start Your Design Journey</h2>
+                <p class="section-subtitle">Ready to transform your space? Let's create something extraordinary together.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Whether you're planning a residential renovation, commercial project, or need creative direction, we're here to help bring your vision to life.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Studio Location</h4>
+                                <p>1863 Wazee St, 1A<br>Denver, CO 80202</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:3039971264">303-997-1264</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:hello@associativeproperties.com">hello@associativeproperties.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Studio Hours</h4>
+                                <p>Mon-Fri: 9AM-6PM<br>Sat: 10AM-4PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Service</option>
+                                <option value="interior-design">Interior Design</option>
+                                <option value="architectural">Architectural Consulting</option>
+                                <option value="project-management">Project Management</option>
+                                <option value="creative-direction">Creative Direction</option>
+                                <option value="furniture-design">Furniture Design</option>
+                                <option value="sustainable-design">Sustainable Design</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Associative Properties, LLC. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="Associative Properties Logo" class="logo">
+                        <span>Associative Properties</span>
+                    </div>
+                    <p>Creating exceptional spaces across Colorado and Utah with passion, precision, and mountain-inspired design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-houzz"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Interior Design</a></li>
+                        <li><a href="#services">Architectural Consulting</a></li>
+                        <li><a href="#services">Project Management</a></li>
+                        <li><a href="#services">Creative Direction</a></li>
+                        <li><a href="#services">Furniture Design</a></li>
+                        <li><a href="#services">Sustainable Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li>Denver, Colorado</li>
+                        <li>Boulder, Colorado</li>
+                        <li>Aspen, Colorado</li>
+                        <li>Park City, Utah</li>
+                        <li>Salt Lake City, Utah</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>1863 Wazee St, 1A</li>
+                        <li>Denver, CO 80202</li>
+                        <li>303-997-1264</li>
+                        <li>hello@associativeproperties.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Associative Properties. All rights reserved.</p>
+                <p>Designing the future, one space at a time.</p>
+            </div>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,48 @@
+{
+  "name": "associative-properties",
+  "version": "1.0.0",
+  "description": "Premier design and design management website for Colorado and Utah",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "dev-node": "npx http-server -p 8000",
+    "dev-browser-sync": "browser-sync start --server --files '*.html, *.css, *.js' --port 3000",
+    "dev-live": "live-server --port=8000 --open=/index.html",
+    "start": "npm run dev",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'",
+    "format": "prettier --write '*.html' '*.css' '*.js'",
+    "serve": "npm run dev"
+  },
+  "keywords": [
+    "design",
+    "interior-design",
+    "architecture",
+    "colorado",
+    "utah",
+    "mountain-west",
+    "portfolio",
+    "responsive",
+    "modern"
+  ],
+  "author": "Associative Design Studio",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "live-server": "^1.2.2",
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/associative-design-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/associative-design-studio/issues"
+  },
+  "homepage": "https://associativedesign.com"
+}
