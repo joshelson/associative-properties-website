@@ -1,279 +1,297 @@
 # Associative Properties - Website
 
-Welcome to the official website for Associative Properties, a premier design and design management company serving Colorado and Utah. We specialize in creating exceptional spaces that inspire and endure, combining mountain-inspired aesthetics with cutting-edge design principles.
+Modern, responsive website for Associative Properties, built with **Astro** and deployed on GitHub Pages.
 
-## About Associative Properties
+## 🚀 Quick Start
 
-Founded in 2016, Associative Properties has been at the forefront of design innovation across the Rocky Mountain region. Our team brings together expertise in:
+### Development
 
-- **Interior Design** - Complete design services from concept to completion
-- **Architectural Consulting** - Expert guidance for new construction and renovations
-- **Project Management** - Comprehensive oversight ensuring on-time, on-budget delivery
-- **Creative Direction** - Strategic visual identity and brand development
-- **Furniture Design** - Custom pieces that perfectly complement your space
-- **Sustainable Design** - Eco-friendly solutions that minimize environmental impact
-
-## Our Approach
-
-We believe in creating designs that honor the natural beauty of the Mountain West while incorporating modern functionality and sustainable practices. Our collaborative process ensures your vision becomes reality through:
-
-1. **Discovery & Consultation** - Understanding your vision and requirements
-2. **Concept Development** - Creating initial designs and proposals
-3. **Design Refinement** - Refining based on feedback and material selection
-4. **Implementation** - Managing the entire construction process
-5. **Final Reveal** - Presenting your completed space with ongoing support
-
-## Service Areas
-
-### Colorado
-- Denver Metro Area
-- Boulder
-- Aspen
-- Vail
-- Breckenridge
-- Steamboat Springs
-
-### Utah
-- Salt Lake City
-- Park City
-- Deer Valley
-- Sundance
-- St. George
-- Moab
-
-## Contact Information
-
-- **Studio Location:** 1863 Wazee St, 1A, Denver, CO 80202
-- **Phone:** 303-997-1264
-- **Email:** hello@associativeproperties.com
-- **Studio Hours:** Mon-Fri: 9AM-6PM, Sat: 10AM-4PM
-
-## Website Features
-
-This modern, responsive website showcases our work and services with:
-
-### Design Elements
-- **Sophisticated Color Palette** - Deep forest green, sage green, and warm taupe
-- **Modern Typography** - Inter and Playfair Display fonts for optimal readability
-- **Responsive Design** - Optimized for all devices and screen sizes
-- **Smooth Animations** - Subtle interactions that enhance user experience
-
-### Technical Features
-- **Fixed Navigation** - Easy access to all sections
-- **Smooth Scrolling** - Seamless navigation between sections
-- **Interactive Forms** - Contact form with validation and notifications
-- **Mobile-First Design** - Optimized for smartphones and tablets
-- **Performance Optimized** - Fast loading times and smooth interactions
-
-### Sections
-1. **Hero Section** - Compelling introduction with call-to-action buttons
-2. **About** - Company story and key differentiators
-3. **Services** - Comprehensive service offerings with detailed descriptions
-4. **Process** - Step-by-step design methodology
-5. **Contact** - Multiple ways to get in touch and start your project
-
-## Development
-
-### Quick Start
-
-#### Option 1: Simple HTTP Server (Recommended for most users)
 ```bash
-# Using Python 3
-python3 -m http.server 8000
+# Install dependencies
+npm install
 
-# Using Python 2
-python -m SimpleHTTPServer 8000
+# Start development server
+npm run dev
 
-# Using Node.js (if you have npx)
-npx http-server -p 8000
-
-# Using PHP
-php -S localhost:8000
+# Open http://localhost:4321
 ```
 
-#### Option 2: Live Server (VS Code Extension)
-1. Install the "Live Server" extension in VS Code
-2. Right-click on `index.html`
-3. Select "Open with Live Server"
-4. Automatically opens in browser with live reload
+### Build & Preview
 
-#### Option 3: Browser-Sync (Advanced)
 ```bash
-# Install browser-sync globally
-npm install -g browser-sync
+# Build for production
+npm run build
 
-# Start development server with live reload
-browser-sync start --server --files "*.html, *.css, *.js" --port 3000
+# Preview production build
+npm run preview
 ```
 
-#### Option 4: Custom Development Script
-Create a `package.json` file for npm scripts:
-```json
-{
-  "name": "associative-properties",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "dev-node": "npx http-server -p 8000",
-    "dev-browser-sync": "browser-sync start --server --files '*.html, *.css, *.js' --port 3000",
-    "dev-live": "live-server --port=8000 --open=/index.html"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.29.3",
-    "live-server": "^1.2.2"
-  }
+## 📦 Deployment
+
+This site automatically deploys to GitHub Pages when you push to the `main` branch.
+
+### Manual Deployment
+
+```bash
+# Commit your changes
+git add .
+git commit -m "Your commit message"
+git push origin main
+
+# GitHub Actions will automatically build and deploy
+# Check the "Actions" tab in GitHub to monitor deployment
+```
+
+### First-Time GitHub Pages Setup
+
+1. Go to your repository settings on GitHub
+2. Navigate to **Pages** in the sidebar
+3. Under **Source**, select **GitHub Actions**
+4. The workflow will automatically deploy on the next push
+
+## 📧 Contact Form - IMPORTANT SETUP REQUIRED
+
+The contact form uses **FormSubmit.co** (free service) to send emails directly to your inbox. **No backend server needed!**
+
+### ⚠️ FIRST TIME SETUP (Required)
+
+**The form will NOT work until you complete this one-time setup:**
+
+1. **Fill out the contact form** on your live website (or localhost)
+2. **Check the inbox** of `hello@associativeproperties.com`
+3. **Click the verification link** in the email from FormSubmit
+4. **Done!** All future form submissions will now arrive in your inbox automatically
+
+**Note:** You only need to do this ONCE. After verification, the form will work forever.
+
+### How It Works
+
+- When someone submits the form, FormSubmit sends you an email with all the details
+- The email will be formatted as a nice table with: Name, Email, Phone, Service, and Message
+- You'll receive emails at: `hello@associativeproperties.com`
+
+### What Happens After Submission?
+
+When a user submits the form:
+1. **FormSubmit processes it** and sends you an email
+2. **User is redirected back** to your site at `#contact-success`
+3. **Thank you message appears** with a checkmark icon
+4. **Form is hidden** and replaced with the success message
+5. User can click "Send Another Message" to submit again
+
+### Form Features
+
+- **Autocomplete enabled**: Browser will suggest saved name, email, and phone
+- **Email validation**: Checks format on blur and before submit
+- **Phone formatting**: Auto-formats as `(XXX) XXX-XXXX` as you type
+- **E.164 conversion**: Phone sent as `+1XXXXXXXXXX` in a hidden field
+- **Spam protection**: Honeypot field prevents bot submissions
+- **Loading state**: Button shows "Sending..." during submission
+
+### Testing Locally
+
+You can test the form on `http://localhost:4321`:
+1. Fill out the form
+2. Submit it
+3. After FormSubmit verification, you'll be redirected back
+4. See the success message appear
+
+**Note:** For local testing, the redirect will go to the production URL. You can change `_next` value to `http://localhost:4321/#contact-success` for local testing.
+
+### Changing the Email Address
+
+To send submissions to a different email:
+
+1. Open `src/components/Contact.astro`
+2. Find: `action="https://formsubmit.co/hello@associativeproperties.com"`
+3. Replace with your email: `action="https://formsubmit.co/your-email@example.com"`
+4. Save and deploy
+5. Submit a test form to trigger the verification email for the new address
+
+## 📁 Project Structure
+
+```
+associative-properties-website/
+├── public/
+│   ├── images/
+│   │   └── logo.png           # Company logo
+│   └── CNAME                  # Custom domain configuration
+├── src/
+│   ├── components/
+│   │   ├── About.astro
+│   │   ├── Contact.astro
+│   │   ├── Footer.astro
+│   │   ├── Hero.astro
+│   │   ├── Navigation.astro
+│   │   ├── Process.astro
+│   │   └── Services.astro
+│   ├── layouts/
+│   │   └── BaseLayout.astro   # Base HTML layout with styles
+│   └── pages/
+│       └── index.astro        # Main page (imports all components)
+├── .github/
+│   └── workflows/
+│       └── deploy.yml         # GitHub Pages deployment
+├── astro.config.mjs           # Astro configuration
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+## 🛠️ Technology Stack
+
+- **Astro** - Modern static site framework
+- **No runtime JavaScript** - Pure HTML/CSS with minimal JS for interactions
+- **FormSubmit** - Contact form email handling (no backend needed)
+- **GitHub Pages** - Free hosting with automatic deployment
+- **GitHub Actions** - Automated build and deploy pipeline
+
+## ✨ Key Features
+
+- **Component-Based** - Modular, reusable Astro components
+- **Fast Performance** - Static HTML generation, minimal JavaScript
+- **Responsive Design** - Mobile-first, works on all devices
+- **Working Contact Form** - Email submissions via FormSubmit
+- **Modern UI** - Smooth animations and contemporary design
+- **Accessible** - Semantic HTML and keyboard navigation
+- **SEO Friendly** - Proper meta tags and sitemap generation
+- **Auto-deployment** - Push to main branch, automatically deploys
+
+## 🎨 Customization
+
+### Update Content
+
+Edit the Astro components in `src/components/`:
+- **Hero.astro** - Homepage hero section
+- **About.astro** - About section content
+- **Services.astro** - Services list (edit the `services` array)
+- **Process.astro** - Design process steps
+- **Contact.astro** - Contact information and form
+- **Footer.astro** - Footer links and info
+
+### Update Styles
+
+Global styles are in `src/layouts/BaseLayout.astro`:
+- CSS variables for colors, fonts, spacing
+- Component-specific styles are in each `.astro` file
+
+### Update Colors
+
+Edit CSS variables in `BaseLayout.astro`:
+
+```css
+:root {
+    --primary-color: #1a3a2e;
+    --accent-color: #c9a770;
+    /* ... more variables */
 }
 ```
 
-Then run:
+### Update Contact Info
+
+In `src/components/Contact.astro` and `src/components/Footer.astro`:
+- Phone: Search for `tel:3039971264`
+- Email: Search for `hello@associativeproperties.com`
+
+### Add Images
+
+Place images in the `public/images/` directory. Reference them in components:
+
+```astro
+<img src="/images/your-image.jpg" alt="Description">
+```
+
+## 🧪 Testing
+
+### Local Testing
+
 ```bash
-npm install
+# Start dev server
 npm run dev
+
+# Build and preview production
+npm run build
+npm run preview
 ```
 
-### Development Tools
+### Testing Checklist
 
-#### Code Editor Setup
-- **VS Code Extensions**:
-  - Live Server
-  - HTML CSS Support
-  - CSS Peek
-  - Auto Rename Tag
-  - Bracket Pair Colorizer
-  - Prettier - Code formatter
+- [ ] Test contact form submission
+- [ ] Verify responsive design (mobile/tablet/desktop)
+- [ ] Check all navigation links work
+- [ ] Test on Chrome, Firefox, Safari
+- [ ] Validate form with empty/invalid inputs
+- [ ] Verify phone and email links work
+- [ ] Check all animations and transitions
 
-#### Browser Developer Tools
-- **Chrome DevTools**: Press F12 or right-click → Inspect
-- **Firefox Developer Tools**: Press F12 or right-click → Inspect Element
-- **Safari Web Inspector**: Develop → Show Web Inspector
+## 🌐 Browser Support
 
-#### Testing Checklist
-- [ ] Test on desktop (Chrome, Firefox, Safari, Edge)
-- [ ] Test on mobile devices (iOS Safari, Chrome Mobile)
-- [ ] Test responsive breakpoints (768px, 480px)
-- [ ] Verify all links work correctly
-- [ ] Test contact form validation
-- [ ] Check loading performance
-- [ ] Validate HTML/CSS
-
-### File Structure
-
-```
-associative-properties/
-├── index.html          # Main website file
-├── style.css           # Comprehensive styling with CSS custom properties
-├── script.js           # Interactive features and animations
-├── images/
-│   └── logo.png        # Company logo
-├── README.md           # This file
-├── CNAME              # Custom domain configuration
-└── package.json        # Development dependencies (optional)
-```
-
-### Development Workflow
-
-1. **Setup Development Environment**
-   ```bash
-   git clone <repository-url>
-   cd associative-properties
-   # Choose one of the server options above
-   ```
-
-2. **Make Changes**
-   - Edit HTML in `index.html`
-   - Modify styles in `style.css`
-   - Update functionality in `script.js`
-   - Add images to `images/` folder
-
-3. **Preview Changes**
-   - Browser will auto-reload with live server
-   - Test on different screen sizes
-   - Use browser dev tools for debugging
-
-4. **Deploy**
-   - Upload files to your hosting provider
-   - Update DNS settings if using custom domain
-   - Test live site functionality
-
-### Troubleshooting
-
-#### Common Issues
-- **CORS Errors**: Use a local server instead of opening file directly
-- **Font Loading Issues**: Check internet connection for Google Fonts
-- **JavaScript Errors**: Check browser console for debugging
-- **Mobile Testing**: Use browser dev tools device simulation
-
-#### Performance Tips
-- Optimize images before adding to `images/` folder
-- Minify CSS/JS for production
-- Enable gzip compression on server
-- Use CDN for external resources
-
-## How to Use
-
-### For Visitors
-1. **Learn About Services** - Review our comprehensive service offerings
-2. **Understand Our Process** - See how we bring your vision to life
-3. **Get in Touch** - Use the contact form or call us directly to start your project
-
-### For Developers
-1. Clone this repository
-2. Choose a development server option from above
-3. Open `index.html` in your browser to view the site
-4. Customize colors, content, and functionality as needed
-5. Deploy to your preferred hosting platform
-
-## Design System
-
-### Color Palette
-- **Primary:** #2C5530 (Deep Forest Green)
-- **Secondary:** #8B9D83 (Sage Green)
-- **Accent:** #D4A574 (Warm Taupe)
-- **Neutral Dark:** #2C2C2C (Charcoal)
-- **Neutral Light:** #F8F9FA (Off White)
-- **Neutral Medium:** #6C757D (Medium Gray)
-
-### Typography
-- **Primary Font:** Inter (Sans-serif)
-- **Display Font:** Playfair Display (Serif)
-- **Responsive sizing** using clamp() for optimal readability
-
-### Spacing & Layout
-- **Container max-width:** 1200px
-- **Section padding:** 80px vertical
-- **Border radius:** 12px
-- **Box shadows** for depth and elevation
-
-## Browser Support
-
-This website is built with modern web standards and supports:
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Performance
+## 🚨 Troubleshooting
 
-The website is optimized for:
-- **Fast loading times** with minimal external dependencies
-- **Smooth animations** using CSS transforms and transitions
-- **Responsive images** (placeholder system ready for real images)
-- **Accessibility** with proper semantic HTML and ARIA labels
+### Build Errors
 
-## Future Enhancements
+```bash
+# Clear node modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
 
-Planned features for future updates:
-- **Blog Section** - Design tips and project insights
-- **Client Portal** - Secure area for project updates
-- **Online Booking** - Schedule consultations directly
-- **Testimonials** - Client feedback and reviews
-- **Social Media Integration** - Instagram and Pinterest feeds
+# Clear Astro cache
+rm -rf .astro dist
+npm run build
+```
 
-## License
+### Form Not Sending Emails
 
-This website is proprietary to Associative Properties. All rights reserved.
+1. Check that you've verified the email with FormSubmit (check inbox/spam)
+2. Verify the form action URL is correct in `Contact.astro`
+3. Ensure JavaScript is enabled in the browser
+4. Check browser console for errors
+
+### Deployment Issues
+
+1. Check the **Actions** tab on GitHub for error logs
+2. Verify GitHub Pages is configured to use **GitHub Actions** (not branch)
+3. Make sure the repository is public (or you have GitHub Pro for private repos)
+4. Check that `astro.config.mjs` has the correct `site` URL
+
+### CNAME / Custom Domain
+
+If using a custom domain:
+1. Ensure `public/CNAME` contains your domain
+2. Configure DNS records with your domain registrar
+3. Wait for DNS propagation (can take up to 48 hours)
+
+## 📝 Development Notes
+
+### Why Astro?
+
+- **Zero JS by default** - Ships pure HTML/CSS, adds JS only when needed
+- **Component islands** - Can use React/Vue/Svelte components if needed
+- **Fast builds** - Optimized for static sites
+- **Great DX** - Modern developer experience with hot reload
+- **Perfect for GitHub Pages** - Generates static HTML, no server needed
+
+### Old Files
+
+The original HTML/CSS/JS files are still in the root directory:
+- `index.html` (old)
+- `style.css` (old)
+- `script.js` (old)
+
+These can be safely deleted after confirming the Astro site works.
+
+## 📄 License
+
+Proprietary - All rights reserved by Associative Properties.
 
 ---
 
-*Creating exceptional spaces across Colorado and Utah with passion, precision, and mountain-inspired design.*
+**Contact:** hello@associativeproperties.com | (303) 997-1264
+
+Built with ❤️ using Astro

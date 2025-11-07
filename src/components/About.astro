@@ -1,0 +1,149 @@
+---
+---
+
+<section id="about" class="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">About Us</span>
+            <h2>Where Creativity Meets Precision</h2>
+            <p class="section-subtitle">Creating exceptional spaces across the Rocky Mountains with passion, precision, and mountain-inspired design</p>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="lead-text">Founded in 2009, Associative Properties has been at the forefront of design innovation across Colorado and Utah. We specialize in creating harmonious spaces that reflect the unique character of the Mountain West while incorporating cutting-edge design principles and sustainable practices.</p>
+                <p>Our team brings together expertise in interior design, architectural consulting, project management, and creative direction. We work with residential clients, commercial developers, and hospitality brands to deliver exceptional design solutions that exceed expectations.</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h4>Mountain-Inspired</h4>
+                        <p>Designs that honor the natural beauty of the Rockies</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Sustainable</h4>
+                        <p>Eco-conscious materials and energy-efficient solutions</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Award-Winning</h4>
+                        <p>Exceptional craftsmanship and attention to detail</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop&q=80" alt="Modern interior design showcase" class="about-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.about {
+    padding: var(--section-padding);
+    background: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 100%;
+}
+
+.about-text p {
+    margin-bottom: 1.75rem;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--neutral-light);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.feature:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon i {
+    font-size: 1.75rem;
+    color: var(--white);
+}
+
+.feature h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.feature p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.about-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.about-img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

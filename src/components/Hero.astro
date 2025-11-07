@@ -1,0 +1,216 @@
+---
+---
+
+<section id="home" class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Elevating Design Across the Rockies</h1>
+        <p class="hero-subtitle">Premier design and design management services in Colorado and Utah, creating spaces that inspire and endure.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Start Your Project</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+        </div>
+    </div>
+    <div class="hero-stats">
+        <div class="stat">
+            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-label">Projects Completed</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number" data-target="2">0</span>
+            <span class="stat-label">States Served</span>
+        </div>
+    </div>
+</section>
+
+<style>
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 140px 60px 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 30px 60px;
+    }
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(201, 167, 112, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 58, 46, 0.1) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: 900px;
+    z-index: 2;
+    position: relative;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 1.375rem;
+    color: var(--neutral-medium);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9375rem;
+    color: var(--neutral-medium);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 20px 60px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-stats {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 20px 50px;
+    }
+
+    .stat {
+        padding: 1rem 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+</style>
+
+<script>
+const stats = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
+
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    let current = 0;
+    const increment = target / 60;
+    const suffix = target > 10 ? '+' : '';
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + suffix;
+    }, 25);
+}
+
+const statsSection = document.querySelector('.hero-stats');
+if (statsSection) {
+    const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !statsAnimated) {
+                statsAnimated = true;
+                stats.forEach((stat, index) => {
+                    setTimeout(() => {
+                        animateCounter(stat);
+                    }, index * 150);
+                });
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    statsObserver.observe(statsSection);
+}
+
+// Parallax effect
+const hero = document.querySelector('.hero');
+const heroBackground = document.querySelector('.hero-background');
+
+window.addEventListener('scroll', function() {
+    if (hero && heroBackground) {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.3;
+        heroBackground.style.transform = `translateY(${rate}px)`;
+    }
+});
+</script>

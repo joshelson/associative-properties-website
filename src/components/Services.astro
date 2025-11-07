@@ -1,0 +1,214 @@
+---
+const services = [
+    {
+        icon: 'fa-home',
+        title: 'Interior Design',
+        description: 'Complete interior design services from concept to completion. We create functional, beautiful spaces that reflect your lifestyle and vision.',
+        features: [
+            'Space planning and layout design',
+            'Furniture selection and custom pieces',
+            'Color palette and material selection',
+            'Lighting design and installation'
+        ]
+    },
+    {
+        icon: 'fa-building',
+        title: 'Architectural Consulting',
+        description: 'Expert architectural guidance for new construction and renovation projects. We ensure your vision is realized with structural integrity.',
+        features: [
+            'Architectural design and planning',
+            'Construction documentation',
+            'Building code compliance',
+            'Project coordination with contractors'
+        ]
+    },
+    {
+        icon: 'fa-tasks',
+        title: 'Project Management',
+        description: 'Comprehensive project management services to ensure your design project stays on time, on budget, and exceeds expectations.',
+        features: [
+            'Timeline and budget management',
+            'Contractor and vendor coordination',
+            'Quality control and inspections',
+            'Progress reporting and communication'
+        ]
+    },
+    {
+        icon: 'fa-palette',
+        title: 'Creative Direction',
+        description: 'Strategic creative direction for brands and businesses looking to establish a cohesive visual identity and memorable customer experience.',
+        features: [
+            'Brand identity development',
+            'Visual merchandising',
+            'Marketing material design',
+            'Customer experience optimization'
+        ]
+    },
+    {
+        icon: 'fa-couch',
+        title: 'Furniture Design',
+        description: 'Custom furniture design and fabrication services. We create unique pieces that perfectly complement your space and lifestyle.',
+        features: [
+            'Custom furniture design',
+            'Material selection and sourcing',
+            'Local artisan collaboration',
+            'Installation and finishing'
+        ]
+    },
+    {
+        icon: 'fa-seedling',
+        title: 'Sustainable Design',
+        description: 'Eco-friendly design solutions that minimize environmental impact while maximizing beauty and functionality.',
+        features: [
+            'Green building materials',
+            'Energy-efficient systems',
+            'Waste reduction strategies',
+            'LEED certification support'
+        ]
+    }
+];
+---
+
+<section id="services" class="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">What We Do</span>
+            <h2>Our Services</h2>
+            <p class="section-subtitle">Comprehensive design solutions tailored to your vision</p>
+        </div>
+        <div class="services-grid">
+            {services.map(service => (
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class={`fas ${service.icon}`}></i>
+                    </div>
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                    <ul>
+                        {service.features.map(feature => (
+                            <li>{feature}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+.services {
+    padding: var(--section-padding);
+    background: var(--neutral-light);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-accent);
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--accent-color);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.service-icon i {
+    font-size: 1.75rem;
+    color: var(--white);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    font-size: 1.75rem;
+}
+
+.service-card > p {
+    margin-bottom: 2rem;
+    font-size: 1.0625rem;
+}
+
+.service-card ul {
+    list-style: none;
+}
+
+.service-card li {
+    padding: 0.75rem 0;
+    color: var(--neutral-medium);
+    position: relative;
+    padding-left: 2rem;
+    font-size: 1rem;
+}
+
+.service-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        padding: 2rem;
+    }
+}
+</style>

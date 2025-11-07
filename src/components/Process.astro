@@ -1,0 +1,151 @@
+---
+const steps = [
+    {
+        number: '01',
+        title: 'Discovery & Consultation',
+        description: 'We begin with an in-depth consultation to understand your vision, lifestyle, and project requirements. This includes site visits, budget discussions, and timeline planning.'
+    },
+    {
+        number: '02',
+        title: 'Concept Development',
+        description: 'Our team creates initial concepts, mood boards, and design proposals that align with your vision and budget. We present multiple options for your consideration.'
+    },
+    {
+        number: '03',
+        title: 'Design Refinement',
+        description: 'Based on your feedback, we refine the design, select materials, and create detailed specifications. This phase includes 3D renderings and material samples.'
+    },
+    {
+        number: '04',
+        title: 'Implementation',
+        description: 'We manage the entire implementation process, coordinating with contractors, overseeing installations, and ensuring quality control throughout the project.'
+    },
+    {
+        number: '05',
+        title: 'Final Reveal',
+        description: 'We present your completed space with final styling and photography. Our relationship continues with post-project support and maintenance guidance.'
+    }
+];
+---
+
+<section id="process" class="process">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">How We Work</span>
+            <h2>Our Design Process</h2>
+            <p class="section-subtitle">A collaborative approach that ensures your vision becomes reality</p>
+        </div>
+        <div class="process-timeline">
+            <div class="timeline-line"></div>
+            {steps.map(step => (
+                <div class="step">
+                    <div class="step-number">{step.number}</div>
+                    <div class="step-content">
+                        <h3>{step.title}</h3>
+                        <p>{step.description}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+.process {
+    padding: var(--section-padding);
+    background: var(--white);
+}
+
+.process-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    bottom: 40px;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color));
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+    z-index: 1;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-accent);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+    z-index: 2;
+}
+
+.step:hover .step-number {
+    transform: scale(1.15);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-content {
+    flex: 1;
+    background: var(--neutral-light);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.step:hover .step-content {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.step-content p {
+    margin: 0;
+    font-size: 1.0625rem;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        display: none;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .step-number {
+        margin: 0 auto;
+    }
+}
+</style>
+

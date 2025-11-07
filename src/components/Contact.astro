@@ -1,0 +1,455 @@
+---
+---
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Get In Touch</span>
+            <h2>Start Your Design Journey</h2>
+            <p class="section-subtitle">Ready to transform your space? Let's create something extraordinary together.</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Let's Collaborate</h3>
+                <p>Whether you're planning a residential renovation, commercial project, or need creative direction, we're here to help bring your vision to life.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:3039971264">(303) 997-1264</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:hello@associativeproperties.com">hello@associativeproperties.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Service Areas</h4>
+                            <p>Colorado & Utah<br>Mountain West Region</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <div class="form-success-message" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been sent successfully. We'll get back to you within 24-48 hours.</p>
+                    <button type="button" class="btn btn-secondary" onclick="document.querySelector('.form-success-message').style.display='none'; document.querySelector('.contact-form').style.display='flex'; document.querySelector('.contact-form').reset();">Send Another Message</button>
+                </div>
+                <form action="https://formsubmit.co/hello@associativeproperties.com" method="POST" class="contact-form">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Associative Properties">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://associativeproperties.com/#contact-success">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(303) 555-0123" pattern="[\(\)\s\-\+0-9]+" title="Please enter a valid phone number" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest *</label>
+                        <select id="service" name="service" required autocomplete="off">
+                            <option value="">Select a Service</option>
+                            <option value="Interior Design">Interior Design</option>
+                            <option value="Architectural Consulting">Architectural Consulting</option>
+                            <option value="Project Management">Project Management</option>
+                            <option value="Creative Direction">Creative Direction</option>
+                            <option value="Furniture Design">Furniture Design</option>
+                            <option value="Sustainable Design">Sustainable Design</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Project *</label>
+                        <textarea id="message" name="message" placeholder="Share details about your project, timeline, and budget..." rows="5" required autocomplete="off"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.contact {
+    padding: var(--section-padding);
+    background: var(--neutral-light);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 100%;
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+    font-size: 2rem;
+}
+
+.contact-info > p {
+    margin-bottom: 3rem;
+    font-size: 1.125rem;
+}
+
+.contact-details {
+    display: grid;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-accent);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.contact-icon i {
+    font-size: 1.25rem;
+}
+
+.contact-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--neutral-medium);
+    font-size: 1rem;
+}
+
+.contact-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.contact-form-wrapper {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.75rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--neutral-dark);
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    background: var(--white);
+    transition: var(--transition);
+    color: var(--neutral-dark);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(201, 167, 112, 0.15);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a5a5a' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 3rem;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+}
+
+.form-error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.form-group.error input,
+.form-group.error select,
+.form-group.error textarea {
+    border-color: #dc3545;
+}
+
+.form-group.error .form-error {
+    display: block;
+}
+
+.form-success-message {
+    text-align: center;
+    padding: 3rem;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    background: var(--gradient-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-icon i {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.form-success-message h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.form-success-message p {
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+}
+</style>
+
+<script>
+// Check if returning from successful form submission
+window.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#contact-success') {
+        const successMessage = document.querySelector('.form-success-message');
+        const contactForm = document.querySelector('.contact-form');
+
+        if (successMessage && contactForm) {
+            successMessage.style.display = 'block';
+            contactForm.style.display = 'none';
+            contactForm.reset();
+
+            // Scroll to contact section
+            document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+
+            // Clear the hash from URL after a moment
+            setTimeout(() => {
+                history.replaceState(null, null, ' ');
+            }, 100);
+        }
+    }
+});
+
+const form = document.querySelector('.contact-form');
+
+if (form) {
+    const phoneInput = form.querySelector('#phone');
+    const emailInput = form.querySelector('#email');
+
+    // Format phone number to E.164 as user types
+    phoneInput?.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+
+        // Format as (XXX) XXX-XXXX while typing
+        if (value.length > 0) {
+            if (value.length <= 3) {
+                value = `(${value}`;
+            } else if (value.length <= 6) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+            } else {
+                value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+            }
+        }
+
+        e.target.value = value;
+    });
+
+    // Validate email on blur
+    emailInput?.addEventListener('blur', function() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const formGroup = this.closest('.form-group');
+
+        if (this.value && !emailRegex.test(this.value)) {
+            formGroup.classList.add('error');
+            let errorMsg = formGroup.querySelector('.form-error');
+            if (!errorMsg) {
+                errorMsg = document.createElement('div');
+                errorMsg.className = 'form-error';
+                errorMsg.textContent = 'Please enter a valid email address';
+                formGroup.appendChild(errorMsg);
+            }
+        } else {
+            formGroup.classList.remove('error');
+        }
+    });
+
+    // Validate phone on blur
+    phoneInput?.addEventListener('blur', function() {
+        const formGroup = this.closest('.form-group');
+        const digits = this.value.replace(/\D/g, '');
+
+        if (this.value && digits.length !== 10) {
+            formGroup.classList.add('error');
+            let errorMsg = formGroup.querySelector('.form-error');
+            if (!errorMsg) {
+                errorMsg = document.createElement('div');
+                errorMsg.className = 'form-error';
+                errorMsg.textContent = 'Please enter a valid 10-digit phone number';
+                formGroup.appendChild(errorMsg);
+            }
+        } else {
+            formGroup.classList.remove('error');
+        }
+    });
+
+    // Convert to E.164 format before submission
+    form.addEventListener('submit', function(e) {
+        const phoneValue = phoneInput?.value;
+
+        if (phoneValue) {
+            // Extract digits only
+            const digits = phoneValue.replace(/\D/g, '');
+
+            // Convert to E.164 format (+1XXXXXXXXXX for US numbers)
+            if (digits.length === 10) {
+                // Create a hidden field for E.164 format
+                let e164Input = form.querySelector('input[name="phone_e164"]');
+                if (!e164Input) {
+                    e164Input = document.createElement('input');
+                    e164Input.type = 'hidden';
+                    e164Input.name = 'phone_e164';
+                    form.appendChild(e164Input);
+                }
+                e164Input.value = `+1${digits}`;
+            }
+        }
+
+        // Final validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const email = emailInput?.value;
+
+        if (email && !emailRegex.test(email)) {
+            e.preventDefault();
+            alert('Please enter a valid email address');
+            emailInput?.focus();
+            return false;
+        }
+
+        if (phoneValue) {
+            const digits = phoneValue.replace(/\D/g, '');
+            if (digits.length > 0 && digits.length !== 10) {
+                e.preventDefault();
+                alert('Please enter a valid 10-digit phone number');
+                phoneInput?.focus();
+                return false;
+            }
+        }
+
+        // Show loading state
+        const submitBtn = form.querySelector('.btn-submit');
+        if (submitBtn) {
+            submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+        }
+    });
+}
+</script>
