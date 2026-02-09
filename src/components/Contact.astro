@@ -3,13 +3,13 @@
 
 <section id="contact" class="contact">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header--dark">
             <span class="section-badge">Get In Touch</span>
             <h2>Start Your Design Journey</h2>
             <p class="section-subtitle">Ready to transform your space? Let's create something extraordinary together.</p>
         </div>
         <div class="contact-content">
-            <div class="contact-info">
+            <div class="contact-info" data-reveal="left">
                 <h3>Let's Collaborate</h3>
                 <p>Whether you're planning a residential renovation, commercial project, or need creative direction, we're here to help bring your vision to life.</p>
                 <div class="contact-details">
@@ -42,16 +42,16 @@
                     </div>
                 </div>
             </div>
-            <div class="contact-form-wrapper">
-                <div class="form-success-message" style="display: none;">
+            <div class="contact-form-wrapper" data-reveal="right" data-reveal-delay="200">
+                <div class="form-success-message" id="formSuccess" style="display: none;">
                     <div class="success-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <h3>Thank You!</h3>
                     <p>Your message has been sent successfully. We'll get back to you within 24-48 hours.</p>
-                    <button type="button" class="btn btn-secondary" onclick="document.querySelector('.form-success-message').style.display='none'; document.querySelector('.contact-form').style.display='flex'; document.querySelector('.contact-form').reset();">Send Another Message</button>
+                    <button type="button" class="btn btn-secondary" id="sendAnotherBtn">Send Another Message</button>
                 </div>
-                <form action="https://formsubmit.co/hello@associativeproperties.com" method="POST" class="contact-form">
+                <form action="https://formsubmit.co/hello@associativeproperties.com" method="POST" class="contact-form" id="contactForm">
                     <input type="hidden" name="_subject" value="New Contact Form Submission - Associative Properties">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
@@ -89,9 +89,12 @@
                         <label for="message">Tell Us About Your Project *</label>
                         <textarea id="message" name="message" placeholder="Share details about your project, timeline, and budget..." rows="5" required autocomplete="off"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
+                    <div class="turnstile-wrapper">
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAACZupVCIPZMbjgGS" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" disabled>
                         <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
+                        <i class="fas fa-arrow-right"></i>
                     </button>
                 </form>
             </div>
@@ -102,7 +105,7 @@
 <style>
 .contact {
     padding: var(--section-padding);
-    background: var(--neutral-light);
+    background: var(--color-charcoal);
 }
 
 .contact-content {
@@ -114,42 +117,44 @@
 }
 
 .contact-info h3 {
-    color: var(--primary-color);
+    color: var(--color-cream);
     margin-bottom: 1.25rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
+    font-weight: 400;
 }
 
 .contact-info > p {
     margin-bottom: 3rem;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+    color: var(--color-ash);
 }
 
 .contact-details {
     display: grid;
-    gap: 2rem;
+    gap: 1.25rem;
 }
 
 .contact-item {
     display: flex;
     align-items: flex-start;
     gap: 1.25rem;
-    padding: 1.5rem;
-    background: var(--white);
+    padding: 1.25rem;
+    background: var(--color-graphite);
     border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     transition: var(--transition);
 }
 
 .contact-item:hover {
-    transform: translateX(8px);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--gradient-accent);
-    color: var(--white);
-    border-radius: var(--border-radius);
+    width: 44px;
+    height: 44px;
+    background: rgba(184, 150, 62, 0.12);
+    color: var(--color-brass);
+    border-radius: var(--border-radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,37 +162,38 @@
 }
 
 .contact-icon i {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
 }
 
 .contact-item h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.125rem;
+    color: var(--color-cream);
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .contact-item p {
     margin: 0;
-    color: var(--neutral-medium);
-    font-size: 1rem;
+    color: var(--color-ash);
+    font-size: 0.9375rem;
 }
 
 .contact-item a {
-    color: var(--primary-color);
+    color: var(--color-brass);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     transition: var(--transition);
 }
 
 .contact-item a:hover {
-    color: var(--accent-color);
+    color: var(--color-brass-light);
 }
 
 .contact-form-wrapper {
-    background: var(--white);
+    background: var(--color-cream);
     padding: 3rem;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact-form {
@@ -202,51 +208,57 @@
 }
 
 .form-group {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.75rem;
-    color: var(--neutral-dark);
-    font-weight: 600;
-    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-stone);
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 1rem 1.25rem;
-    border: 2px solid #e0e0e0;
-    border-radius: var(--border-radius);
+    padding: 0.875rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: var(--border-radius-sm);
     font-family: var(--font-primary);
-    font-size: 1rem;
-    background: var(--white);
+    font-size: 0.9375rem;
+    background: var(--color-white);
     transition: var(--transition);
-    color: var(--neutral-dark);
+    color: var(--color-ink);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 4px rgba(201, 167, 112, 0.15);
+    border-color: var(--color-brass);
+    box-shadow: 0 0 0 3px rgba(184, 150, 62, 0.12);
 }
 
 .form-group textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 120px;
 }
 
 .form-group select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a5a5a' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2348484a' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 3rem;
+}
+
+.turnstile-wrapper {
+    margin-bottom: 1.5rem;
 }
 
 @media (max-width: 768px) {
@@ -268,7 +280,7 @@
 
 .form-error {
     color: #dc3545;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     margin-top: 0.5rem;
     display: none;
 }
@@ -289,10 +301,10 @@
 }
 
 .success-icon {
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
     margin: 0 auto 2rem;
-    background: var(--gradient-accent);
+    background: rgba(184, 150, 62, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -300,28 +312,60 @@
 }
 
 .success-icon i {
-    font-size: 2.5rem;
-    color: var(--white);
+    font-size: 2rem;
+    color: var(--color-brass);
 }
 
 .form-success-message h3 {
-    color: var(--primary-color);
+    color: var(--color-ink);
     margin-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .form-success-message p {
     margin-bottom: 2rem;
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
 }
 </style>
 
 <script>
+// Turnstile callbacks (must be global)
+window.onTurnstileSuccess = function() {
+    const btn = document.querySelector('.btn-submit');
+    if (btn) btn.disabled = false;
+};
+
+window.onTurnstileExpired = function() {
+    const btn = document.querySelector('.btn-submit');
+    if (btn) btn.disabled = true;
+};
+
+// Send Another Message button
+const sendAnotherBtn = document.getElementById('sendAnotherBtn');
+if (sendAnotherBtn) {
+    sendAnotherBtn.addEventListener('click', function() {
+        const successMessage = document.getElementById('formSuccess');
+        const contactForm = document.getElementById('contactForm');
+        if (successMessage && contactForm) {
+            successMessage.style.display = 'none';
+            contactForm.style.display = 'flex';
+            contactForm.reset();
+            // Reset Turnstile widget
+            if (window.turnstile) {
+                window.turnstile.reset();
+            }
+            // Re-disable submit button
+            const btn = contactForm.querySelector('.btn-submit');
+            if (btn) btn.disabled = true;
+        }
+    });
+}
+
 // Check if returning from successful form submission
 window.addEventListener('DOMContentLoaded', function() {
     if (window.location.hash === '#contact-success') {
-        const successMessage = document.querySelector('.form-success-message');
-        const contactForm = document.querySelector('.contact-form');
+        const successMessage = document.getElementById('formSuccess');
+        const contactForm = document.getElementById('contactForm');
 
         if (successMessage && contactForm) {
             successMessage.style.display = 'block';
@@ -339,17 +383,16 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-const form = document.querySelector('.contact-form');
+const form = document.getElementById('contactForm');
 
 if (form) {
     const phoneInput = form.querySelector('#phone');
     const emailInput = form.querySelector('#email');
 
-    // Format phone number to E.164 as user types
+    // Format phone number as user types
     phoneInput?.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
 
-        // Format as (XXX) XXX-XXXX while typing
         if (value.length > 0) {
             if (value.length <= 3) {
                 value = `(${value}`;
@@ -401,17 +444,21 @@ if (form) {
         }
     });
 
-    // Convert to E.164 format before submission
+    // Submit handler
     form.addEventListener('submit', function(e) {
         const phoneValue = phoneInput?.value;
 
+        // Safety net: check Turnstile token
+        const turnstileInput = form.querySelector('input[name="cf-turnstile-response"]');
+        if (!turnstileInput || !turnstileInput.value) {
+            e.preventDefault();
+            return false;
+        }
+
         if (phoneValue) {
-            // Extract digits only
             const digits = phoneValue.replace(/\D/g, '');
 
-            // Convert to E.164 format (+1XXXXXXXXXX for US numbers)
             if (digits.length === 10) {
-                // Create a hidden field for E.164 format
                 let e164Input = form.querySelector('input[name="phone_e164"]');
                 if (!e164Input) {
                     e164Input = document.createElement('input');
@@ -429,7 +476,6 @@ if (form) {
 
         if (email && !emailRegex.test(email)) {
             e.preventDefault();
-            alert('Please enter a valid email address');
             emailInput?.focus();
             return false;
         }
@@ -438,7 +484,6 @@ if (form) {
             const digits = phoneValue.replace(/\D/g, '');
             if (digits.length > 0 && digits.length !== 10) {
                 e.preventDefault();
-                alert('Please enter a valid 10-digit phone number');
                 phoneInput?.focus();
                 return false;
             }

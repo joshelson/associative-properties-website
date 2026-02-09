@@ -35,15 +35,12 @@ const steps = [
             <h2>Our Design Process</h2>
             <p class="section-subtitle">A collaborative approach that ensures your vision becomes reality</p>
         </div>
-        <div class="process-timeline">
-            <div class="timeline-line"></div>
-            {steps.map(step => (
-                <div class="step">
-                    <div class="step-number">{step.number}</div>
-                    <div class="step-content">
-                        <h3>{step.title}</h3>
-                        <p>{step.description}</p>
-                    </div>
+        <div class="process-grid">
+            {steps.map((step, index) => (
+                <div class="process-step" data-reveal data-reveal-delay={index * 100}>
+                    <span class="step-number">{step.number}</span>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
                 </div>
             ))}
         </div>
@@ -53,99 +50,64 @@ const steps = [
 <style>
 .process {
     padding: var(--section-padding);
-    background: var(--white);
+    background: var(--color-ivory);
 }
 
-.process-timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
 }
 
-.timeline-line {
-    position: absolute;
-    left: 40px;
-    top: 40px;
-    bottom: 40px;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color));
-    z-index: 0;
+.process-step {
+    padding: 2rem 1.5rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
 }
 
-.step {
-    position: relative;
-    display: flex;
-    gap: 2.5rem;
-    margin-bottom: 3.5rem;
-    z-index: 1;
-}
-
-.step:last-child {
-    margin-bottom: 0;
+.process-step:hover {
+    border-top-color: var(--color-brass);
 }
 
 .step-number {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-accent);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 800;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    position: relative;
-    z-index: 2;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--color-brass);
+    line-height: 1;
+    margin-bottom: 1.25rem;
 }
 
-.step:hover .step-number {
-    transform: scale(1.15);
-    box-shadow: var(--shadow-lg);
+.process-step h3 {
+    color: var(--color-ink);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
-.step-content {
-    flex: 1;
-    background: var(--neutral-light);
-    padding: 2.5rem;
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--accent-color);
-    transition: var(--transition);
-}
-
-.step:hover .step-content {
-    transform: translateX(8px);
-    box-shadow: var(--shadow-md);
-}
-
-.step-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.75rem;
-}
-
-.step-content p {
+.process-step p {
     margin: 0;
-    font-size: 1.0625rem;
+    font-size: 0.9375rem;
+    color: var(--color-stone);
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-    .timeline-line {
-        display: none;
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .step {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .step-number {
-        margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+    .process-grid {
+        grid-template-columns: 1fr;
     }
 }
 </style>
-

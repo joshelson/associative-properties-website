@@ -50,8 +50,8 @@
 
 <style>
 .footer {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--color-ink);
+    color: var(--color-cream);
     padding: 5rem 0 2rem;
 }
 
@@ -82,27 +82,32 @@
 }
 
 .footer-logo .logo {
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
     filter: brightness(0) invert(1);
 }
 
 .footer-logo span {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.35rem;
+    font-weight: 500;
+    font-size: 1.25rem;
 }
 
 .footer-section p {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-ash);
     margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
 }
 
 .footer-section h4 {
-    color: var(--white);
-    margin-bottom: 1.5rem;
-    font-size: 1.25rem;
+    color: var(--color-cream);
+    margin-bottom: 1.25rem;
+    font-family: var(--font-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 
 .footer-section ul {
@@ -110,31 +115,32 @@
 }
 
 .footer-section li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.625rem;
+    color: var(--color-ash);
+    font-size: 0.9375rem;
 }
 
 .footer-section a {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-ash);
     text-decoration: none;
     transition: var(--transition);
-    font-size: 1rem;
+    font-size: 0.9375rem;
 }
 
 .footer-section a:hover {
-    color: var(--accent-color);
-    padding-left: 5px;
+    color: var(--color-brass);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 2rem;
     text-align: center;
 }
 
 .footer-bottom p {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 0.5rem;
-    font-size: 0.9375rem;
+    color: var(--color-stone);
+    margin-bottom: 0.25rem;
+    font-size: 0.8125rem;
 }
 
 @media (max-width: 1024px) {

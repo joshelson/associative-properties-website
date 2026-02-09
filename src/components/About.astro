@@ -3,41 +3,47 @@
 
 <section id="about" class="about">
     <div class="container">
-        <div class="section-header">
-            <span class="section-badge">About Us</span>
-            <h2>Where Creativity Meets Precision</h2>
-            <p class="section-subtitle">Creating exceptional spaces across the Rocky Mountains with passion, precision, and mountain-inspired design</p>
-        </div>
         <div class="about-content">
-            <div class="about-text">
+            <div class="about-image" data-reveal="left">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop&q=80" alt="Modern interior design showcase" class="about-img">
+            </div>
+            <div class="about-text" data-reveal="right" data-reveal-delay="200">
+                <div class="section-header">
+                    <span class="section-badge">About Us</span>
+                    <h2>Where Creativity Meets Precision</h2>
+                    <p class="section-subtitle">Creating exceptional spaces across the Rocky Mountains with passion, precision, and mountain-inspired design</p>
+                </div>
                 <p class="lead-text">Founded in 2009, Associative Properties has been at the forefront of design innovation across Colorado and Utah. We specialize in creating harmonious spaces that reflect the unique character of the Mountain West while incorporating cutting-edge design principles and sustainable practices.</p>
                 <p>Our team brings together expertise in interior design, architectural consulting, project management, and creative direction. We work with residential clients, commercial developers, and hospitality brands to deliver exceptional design solutions that exceed expectations.</p>
                 <div class="about-features">
-                    <div class="feature">
+                    <div class="feature-row">
                         <div class="feature-icon">
                             <i class="fas fa-mountain"></i>
                         </div>
-                        <h4>Mountain-Inspired</h4>
-                        <p>Designs that honor the natural beauty of the Rockies</p>
+                        <div class="feature-text">
+                            <h4>Mountain-Inspired</h4>
+                            <p>Designs that honor the natural beauty of the Rockies</p>
+                        </div>
                     </div>
-                    <div class="feature">
+                    <div class="feature-row">
                         <div class="feature-icon">
                             <i class="fas fa-leaf"></i>
                         </div>
-                        <h4>Sustainable</h4>
-                        <p>Eco-conscious materials and energy-efficient solutions</p>
+                        <div class="feature-text">
+                            <h4>Sustainable</h4>
+                            <p>Eco-conscious materials and energy-efficient solutions</p>
+                        </div>
                     </div>
-                    <div class="feature">
+                    <div class="feature-row">
                         <div class="feature-icon">
                             <i class="fas fa-award"></i>
                         </div>
-                        <h4>Award-Winning</h4>
-                        <p>Exceptional craftsmanship and attention to detail</p>
+                        <div class="feature-text">
+                            <h4>Award-Winning</h4>
+                            <p>Exceptional craftsmanship and attention to detail</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop&q=80" alt="Modern interior design showcase" class="about-img">
             </div>
         </div>
     </div>
@@ -46,73 +52,76 @@
 <style>
 .about {
     padding: var(--section-padding);
-    background: var(--white);
+    background: var(--color-cream);
 }
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
     align-items: center;
     max-width: 100%;
 }
 
+.about-text .section-header {
+    margin-bottom: 2rem;
+}
+
 .about-text p {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
 }
 
 .about-features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.feature {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    background: var(--neutral-light);
-    border-radius: var(--border-radius);
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: var(--transition);
-    border: 2px solid transparent;
 }
 
-.feature:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--accent-color);
+.feature-row:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.feature-row:hover {
+    padding-left: 0.5rem;
 }
 
 .feature-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1.5rem;
-    background: var(--gradient-accent);
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background: rgba(184, 150, 62, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition);
-}
-
-.feature:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
 }
 
 .feature-icon i {
-    font-size: 1.75rem;
-    color: var(--white);
+    font-size: 1.125rem;
+    color: var(--color-brass);
 }
 
-.feature h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+.feature-text h4 {
+    color: var(--color-ink);
+    margin-bottom: 0.25rem;
+    font-size: 1.125rem;
+    font-weight: 500;
 }
 
-.feature p {
-    font-size: 1rem;
+.feature-text p {
+    font-size: 0.9375rem;
     margin: 0;
+    color: var(--color-ash);
 }
 
 .about-image {
@@ -124,26 +133,30 @@
 
 .about-img {
     width: 100%;
-    height: 500px;
+    height: 580px;
     object-fit: cover;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-lg);
-    transition: var(--transition);
+    border-radius: var(--border-radius);
+    display: block;
 }
 
-.about-img:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-hover);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .about-content {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
 
-    .about-features {
-        grid-template-columns: 1fr;
+    .about-image {
+        order: -1;
+    }
+
+    .about-img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        gap: 2.5rem;
     }
 }
 </style>
