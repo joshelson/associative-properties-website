@@ -1,325 +1,234 @@
 ---
 ---
 
-<section id="home" class="hero">
-    <div class="hero-grid">
-        <div class="hero-content" data-reveal="left">
-            <span class="section-badge">Colorado & Utah</span>
-            <h1 class="hero-title">Elevating Design Across the Rockies</h1>
-            <p class="hero-subtitle">Premier design and design management services creating spaces that inspire and endure.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-hero-primary">Start Your Project</a>
-                <a href="#services" class="btn btn-hero-secondary">Explore Services</a>
+<section id="top" class="hero">
+    <div class="hero-inner container">
+        <figure class="equation" data-equation data-state="left">
+            <p class="sr-only">Design plus build, grouped together, plus manage, equals design plus build and manage grouped together. However the work is grouped, the result is the same.</p>
+            <div class="eq-line" aria-hidden="true">
+                <span class="eq-paren" data-paren="open">(</span>
+                <span class="eq-term" data-term="a">design</span>
+                <span class="eq-op">+</span>
+                <span class="eq-term" data-term="b">build</span>
+                <span class="eq-paren" data-paren="close">)</span>
+                <span class="eq-op">+</span>
+                <span class="eq-term" data-term="c">manage</span>
             </div>
-        </div>
-        <div class="hero-image-wrapper" data-reveal="right" data-reveal-delay="200">
-            <div class="hero-image-frame">
-                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=1000&fit=crop&q=80" alt="Modern interior design by Associative Properties" class="hero-image">
+            <figcaption class="eq-caption">
+                <button type="button" class="eq-button" data-regroup>Regroup</button>
+                <span>The result holds.</span>
+            </figcaption>
+        </figure>
+
+        <div class="hero-copy">
+            <h1>Design and design management for the Rockies.</h1>
+            <p class="hero-lede">We bring interiors, architecture, and project management into one working group across Colorado and Utah. Group the work however you need. One team answers for all of it.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-rose">Start a project</a>
+                <a href="#services" class="btn btn-ghost">See what we do</a>
             </div>
-        </div>
-    </div>
-    <div class="hero-stats">
-        <div class="stat" data-reveal data-reveal-delay="400">
-            <span class="stat-number" data-target="50">0</span>
-            <span class="stat-label">Projects Completed</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat" data-reveal data-reveal-delay="550">
-            <span class="stat-number" data-target="15">0</span>
-            <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat" data-reveal data-reveal-delay="700">
-            <span class="stat-number" data-target="2">0</span>
-            <span class="stat-label">States Served</span>
         </div>
     </div>
 </section>
 
 <style>
 .hero {
-    min-height: 100vh;
+    background: var(--spruce);
+    color: var(--snow);
+    padding: clamp(130px, 18vh, 200px) 0 clamp(72px, 10vw, 120px);
+    min-height: 92vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 140px 60px 80px;
+    align-items: center;
     position: relative;
     overflow: hidden;
-    background: var(--color-charcoal);
 }
 
-.hero-grid {
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 100%;
+.hero-inner {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
-    margin-bottom: 5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(3rem, 7vw, 5.5rem);
 }
 
-.hero-content {
-    z-index: 2;
-    position: relative;
+/* ---- Equation ---- */
+.equation {
+    container-type: inline-size;
 }
 
-.hero .section-badge {
-    color: var(--color-brass);
-}
-
-.hero .section-badge::before {
-    background: var(--color-brass);
-}
-
-.hero-title {
-    color: var(--color-cream);
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-    letter-spacing: -0.5px;
-}
-
-.hero-subtitle {
-    font-size: 1.1875rem;
-    color: var(--color-ash);
-    margin-bottom: 3rem;
-    max-width: 520px;
-    line-height: 1.8;
-}
-
-.hero-buttons {
+.eq-line {
     display: flex;
-    gap: 1.25rem;
+    align-items: baseline;
+    font-family: var(--font-display);
+    font-size: min(9cqi, 8.5rem);
+    font-weight: 360;
+    font-variation-settings: 'opsz' 96;
+    letter-spacing: 0;
+    line-height: 1.05;
+    white-space: nowrap;
+}
+
+.eq-term {
+    transition: color 0.7s var(--ease);
+}
+
+/* All horizontal space lives on the operator, equal on both sides */
+.eq-op {
+    margin-inline: 0.3em;
+    color: var(--mist-light);
+    font-weight: 360;
+}
+
+/* Parentheses sit tight against the term they open or close */
+.eq-paren {
+    color: var(--rose-light);
+    font-weight: 360;
+}
+
+.eq-paren[data-paren='open'] {
+    margin-right: 0.04em;
+}
+
+.eq-paren[data-paren='close'] {
+    margin-left: 0.04em;
+}
+
+/* The term outside the group steps back */
+.equation[data-state='left'] [data-term='c'],
+.equation[data-state='right'] [data-term='a'] {
+    color: var(--mist-light);
+}
+
+.eq-caption {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    color: var(--mist-light);
+}
+
+.eq-button {
+    font: inherit;
+    font-weight: 550;
+    color: var(--snow);
+    background: none;
+    border: 1.5px solid var(--line-light);
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.eq-button:hover {
+    border-color: var(--rose-light);
+}
+
+/* ---- Copy ---- */
+.hero-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1.5rem 4rem;
+    align-items: end;
+    padding-top: clamp(2rem, 4vw, 3rem);
+    border-top: 1px solid var(--line-light);
+}
+
+.hero-copy h1 {
+    font-size: clamp(1.75rem, 4vw, 3.25rem);
+    font-weight: 500;
+    max-width: 14ch;
+}
+
+.hero-lede {
+    color: var(--mist-light);
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    grid-column: 2;
+    display: flex;
+    gap: 0.875rem;
     flex-wrap: wrap;
 }
 
-.btn-hero-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 14px 32px;
-    border-radius: var(--border-radius-sm);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.8125rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    transition: var(--transition);
-    border: none;
-    cursor: pointer;
-    background: var(--color-brass);
-    color: var(--color-white);
-}
-
-.btn-hero-primary:hover {
-    background: var(--color-brass-light);
-    transform: translateY(-1px);
-}
-
-.btn-hero-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 14px 32px;
-    border-radius: var(--border-radius-sm);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.8125rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    transition: var(--transition);
-    cursor: pointer;
-    background: transparent;
-    color: var(--color-cream);
-    border: 1.5px solid rgba(250, 248, 245, 0.4);
-}
-
-.btn-hero-secondary:hover {
-    border-color: var(--color-cream);
-    background: rgba(250, 248, 245, 0.1);
-    transform: translateY(-1px);
-}
-
-/* Hero Image */
-.hero-image-wrapper {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-image-frame {
-    position: relative;
-}
-
-.hero-image-frame::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    right: -12px;
-    width: 100%;
-    height: 100%;
-    border: 1.5px solid var(--color-brass);
-    border-radius: var(--border-radius);
-    z-index: -1;
-}
-
-.hero-image {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-image-wrapper:hover .hero-image {
-    transform: scale(1.02);
-}
-
-/* Stats Bar */
-.hero-stats {
-    max-width: 1140px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    z-index: 2;
-    position: relative;
-}
-
-.stat {
-    text-align: center;
-    padding: 0;
-}
-
-.stat-divider {
-    width: 1px;
-    height: 50px;
-    background: rgba(250, 248, 245, 0.15);
-}
-
-.stat-number {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 3rem;
-    font-weight: 300;
-    color: var(--color-brass);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-}
-
-.stat-label {
-    font-size: 0.75rem;
-    color: var(--color-ash);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-}
-
-@media (max-width: 968px) {
-    .hero-grid {
+@media (max-width: 860px) {
+    .hero-copy {
         grid-template-columns: 1fr;
-        gap: 3rem;
     }
 
-    .hero-image {
-        height: 400px;
-    }
-
-    .hero-image-frame::before {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 120px 30px 60px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .btn-hero-primary,
-    .btn-hero-secondary {
-        justify-content: center;
-    }
-
-    .hero-stats {
-        gap: 2rem;
-    }
-
-    .stat-number {
-        font-size: 2.5rem;
+    .hero-actions {
+        grid-column: 1;
     }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding: 100px 20px 50px;
-    }
-
-    .hero-stats {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .stat-divider {
-        width: 40px;
-        height: 1px;
+    .hero-actions .btn {
+        flex: 1 1 100%;
     }
 }
 </style>
 
 <script>
-const stats = document.querySelectorAll('.stat-number');
-let statsAnimated = false;
+const eq = document.querySelector<HTMLElement>('[data-equation]');
 
-function animateCounter(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    let current = 0;
-    const increment = target / 60;
-    const suffix = target > 10 ? '+' : '';
+if (eq) {
+    const line = eq.querySelector<HTMLElement>('.eq-line')!;
+    const open = line.querySelector<HTMLElement>('[data-paren="open"]')!;
+    const close = line.querySelector<HTMLElement>('[data-paren="close"]')!;
+    const term = (k: string) => line.querySelector<HTMLElement>(`[data-term="${k}"]`)!;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let animating = false;
 
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
+    // left:  (design + build) + manage
+    // right: design + (build + manage)
+    const arrange = (state: string) => {
+        const [first, last] = state === 'left' ? [term('a'), term('b')] : [term('b'), term('c')];
+        first.before(open);
+        last.after(close);
+        eq.dataset.state = state;
+    };
+
+    const regroup = () => {
+        if (animating) return;
+        const next = eq.dataset.state === 'left' ? 'right' : 'left';
+        const items = Array.from(line.children) as HTMLElement[];
+
+        if (reduceMotion.matches) {
+            arrange(next);
+            return;
         }
-        element.textContent = Math.floor(current) + suffix;
-    }, 25);
-}
 
-const statsSection = document.querySelector('.hero-stats');
-if (statsSection) {
-    const statsObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !statsAnimated) {
-                statsAnimated = true;
-                stats.forEach((stat, index) => {
-                    setTimeout(() => {
-                        animateCounter(stat);
-                    }, index * 150);
-                });
-                statsObserver.unobserve(entry.target);
-            }
+        // FLIP: measure, rearrange, then animate from the old positions
+        const before = new Map(items.map((el) => [el, el.getBoundingClientRect().left]));
+        arrange(next);
+        const duration = 800;
+        const easing = 'cubic-bezier(0.65, 0, 0.35, 1)';
+        animating = true;
+
+        const animations = items.map((el) => {
+            const dx = before.get(el)! - el.getBoundingClientRect().left;
+            if (Math.abs(dx) < 0.5) return null;
+            const frames = [{ transform: `translateX(${dx}px)` }, { transform: 'translateX(0)' }];
+            return el.animate(frames, { duration, easing });
         });
-    }, { threshold: 0.5 });
 
-    statsObserver.observe(statsSection);
-}
+        Promise.all(animations.map((a) => a?.finished)).finally(() => {
+            animating = false;
+        });
+    };
 
-// Parallax effect on hero image
-const heroImage = document.querySelector('.hero-image');
+    arrange('left');
+    eq.querySelector<HTMLButtonElement>('[data-regroup]')?.addEventListener('click', regroup);
 
-window.addEventListener('scroll', function() {
-    if (heroImage) {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.08;
-        heroImage.style.transform = `scale(${1 + rate * 0.001})`;
+    const start = () => {
+        if (!reduceMotion.matches) window.setTimeout(regroup, 1400);
+    };
+
+    if (document.fonts?.ready) {
+        document.fonts.ready.then(start);
+    } else {
+        start();
     }
-});
+}
 </script>

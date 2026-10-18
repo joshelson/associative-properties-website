@@ -29,3 +29,9 @@ pnpm-debug.log*
 
 # Optional eslint cache
 .eslintcache
+
+# astro dev/preview server state (Astro 7+)
+.astro/dev.json
+.astro/dev.log
+.astro/preview.json
+.astro/preview.log

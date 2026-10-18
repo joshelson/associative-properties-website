@@ -1,162 +1,168 @@
 ---
+const facts = [
+    { term: 'Founded', value: '2009' },
+    { term: 'Projects completed', value: '10+' },
+    { term: 'Working in', value: 'Colorado and Utah' },
+];
+
+const principles = [
+    { title: 'Mountain-inspired', text: 'Spaces that answer to the light, materials, and weather of the Rockies.' },
+    { title: 'Sustainable', text: 'Eco-conscious materials and energy-efficient systems, specified from the start.' },
+    { title: 'Award-winning', text: 'Craftsmanship and attention to detail that hold up long after the reveal.' },
+];
 ---
 
-<section id="about" class="about">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-image" data-reveal="left">
-                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop&q=80" alt="Modern interior design showcase" class="about-img">
-            </div>
-            <div class="about-text" data-reveal="right" data-reveal-delay="200">
-                <div class="section-header">
-                    <span class="section-badge">About Us</span>
-                    <h2>Where Creativity Meets Precision</h2>
-                    <p class="section-subtitle">Creating exceptional spaces across the Rocky Mountains with passion, precision, and mountain-inspired design</p>
-                </div>
-                <p class="lead-text">Founded in 2009, Associative Properties has been at the forefront of design innovation across Colorado and Utah. We specialize in creating harmonious spaces that reflect the unique character of the Mountain West while incorporating cutting-edge design principles and sustainable practices.</p>
-                <p>Our team brings together expertise in interior design, architectural consulting, project management, and creative direction. We work with residential clients, commercial developers, and hospitality brands to deliver exceptional design solutions that exceed expectations.</p>
-                <div class="about-features">
-                    <div class="feature-row">
-                        <div class="feature-icon">
-                            <i class="fas fa-mountain"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h4>Mountain-Inspired</h4>
-                            <p>Designs that honor the natural beauty of the Rockies</p>
-                        </div>
+<section id="studio" class="studio">
+    <div class="container studio-grid">
+        <div class="studio-text">
+            <span class="kicker">The studio</span>
+            <h2>Named for a rule you learned in grade school.</h2>
+            <p class="studio-lede">The associative property says that <span class="math">(a + b) + c</span> equals <span class="math">a + (b + c)</span>. Change the grouping and the answer stays put.</p>
+            <p>We run projects the same way. Since 2009 we have brought designers, architects, contractors, and owners into one working group across Colorado and Utah. Whoever leads a phase, and whatever order the work arrives in, the finished space comes out the way it was drawn.</p>
+            <p>We work with homeowners, commercial developers, and hospitality brands, from a single room to a full build.</p>
+
+            <ul class="principles">
+                {principles.map((p) => (
+                    <li>
+                        <h3>{p.title}</h3>
+                        <p>{p.text}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        <div class="studio-aside">
+            <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&h=1100&fit=crop&q=80"
+                alt="A light-filled modern living room with timber and stone finishes"
+                width="900"
+                height="1100"
+                loading="lazy"
+                class="studio-img"
+            >
+            <dl class="facts">
+                {facts.map((f) => (
+                    <div>
+                        <dt>{f.term}</dt>
+                        <dd>{f.value}</dd>
                     </div>
-                    <div class="feature-row">
-                        <div class="feature-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h4>Sustainable</h4>
-                            <p>Eco-conscious materials and energy-efficient solutions</p>
-                        </div>
-                    </div>
-                    <div class="feature-row">
-                        <div class="feature-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="feature-text">
-                            <h4>Award-Winning</h4>
-                            <p>Exceptional craftsmanship and attention to detail</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                ))}
+            </dl>
         </div>
     </div>
 </section>
 
 <style>
-.about {
-    padding: var(--section-padding);
-    background: var(--color-cream);
+.studio {
+    padding: var(--section-y) 0;
 }
 
-.about-content {
+.studio-grid {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 5rem;
-    align-items: center;
-    max-width: 100%;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: clamp(3rem, 7vw, 6.5rem);
+    align-items: start;
 }
 
-.about-text .section-header {
+.studio-text h2 {
     margin-bottom: 2rem;
 }
 
-.about-text p {
-    margin-bottom: 1.5rem;
+.studio-text > p {
+    margin-bottom: 1.25rem;
+    color: #3B4448;
 }
 
-.about-features {
-    margin-top: 2.5rem;
-    display: flex;
-    flex-direction: column;
+.studio-lede {
+    font-size: 1.4375rem;
+    line-height: 1.5;
+    color: var(--granite) !important;
+}
+
+.math {
+    font-family: var(--font-display);
+    font-weight: 450;
+    white-space: nowrap;
+    color: var(--rose);
+}
+
+.principles {
+    list-style: none;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+}
+
+.principles h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.principles p {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--mist);
+}
+
+.studio-aside {
+    position: sticky;
+    top: 110px;
+}
+
+.studio-img {
+    width: 100%;
+    aspect-ratio: 9 / 11;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2px 2px 120px 2px;
+}
+
+.facts {
+    margin-top: 1.75rem;
+    display: grid;
     gap: 0;
 }
 
-.feature-row {
+.facts div {
     display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: var(--transition);
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
 }
 
-.feature-row:first-child {
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.feature-row:hover {
-    padding-left: 0.5rem;
-}
-
-.feature-icon {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    background: rgba(184, 150, 62, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.feature-icon i {
-    font-size: 1.125rem;
-    color: var(--color-brass);
-}
-
-.feature-text h4 {
-    color: var(--color-ink);
-    margin-bottom: 0.25rem;
-    font-size: 1.125rem;
-    font-weight: 500;
-}
-
-.feature-text p {
+.facts dt {
+    font-family: var(--font-display);
     font-size: 0.9375rem;
-    margin: 0;
-    color: var(--color-ash);
+    color: var(--mist);
 }
 
-.about-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.facts dd {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: right;
 }
 
-.about-img {
-    width: 100%;
-    height: 580px;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    display: block;
-}
-
-@media (max-width: 968px) {
-    .about-content {
+@media (max-width: 960px) {
+    .studio-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
     }
 
-    .about-image {
-        order: -1;
-    }
-
-    .about-img {
-        height: 400px;
+    .studio-aside {
+        position: static;
+        max-width: 560px;
     }
 }
 
-@media (max-width: 768px) {
-    .about-content {
-        gap: 2.5rem;
+@media (max-width: 640px) {
+    .principles {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 </style>

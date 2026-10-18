@@ -295,3 +295,21 @@ Proprietary - All rights reserved by Associative Properties.
 **Contact:** hello@associativeproperties.com | (303) 997-1264
 
 Built with ❤️ using Astro
+
+## Brand
+
+The logo is a solid geometric "A" with a flat summit, held in parentheses: a nod to the Rockies and to the associative property, (a + b) + c = a + (b + c). In the site header it animates once on load (the peak rises summit-first out of a ground line, then the parentheses close in); everywhere else it is static. The animated version lives in `src/components/Logo.astro` (`animate` prop).
+
+Logo files live in `public/brand/`:
+
+- `mark.svg`, `mark-reversed.svg`: the symbol alone, for light and dark backgrounds
+- `logo-horizontal.svg`, `logo-horizontal-reversed.svg`: symbol with one-line wordmark
+- `logo-stacked.svg`, `logo-stacked-reversed.svg` (+ `.png`): symbol with two-line wordmark
+- `icon.svg`, `icon-512.png`: app icon on a spruce tile (also used for the favicon)
+
+Palette: spruce `#1E3B34`, granite `#22272B`, snow `#F1F4F3`, alpenglow rose `#C9506A` / `#EE93A5` on dark.
+Type: Bricolage Grotesque (display and wordmark) and Newsreader (body).
+
+## llms.txt
+
+`public/llms.txt` gives language models a plain-text summary of the firm, services, process, and contact details, following the [llms.txt](https://llmstxt.org) format. Update it when services or contact details change.

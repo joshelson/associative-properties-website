@@ -1,0 +1,107 @@
+---
+interface Props {
+  /** Height of the mark in px; width follows the 80:64 artwork. */
+  size?: number;
+  wordmark?: boolean;
+  /** Play the rise-in sequence once on load (header only). */
+  animate?: boolean;
+  class?: string;
+}
+const { size = 40, wordmark = true, animate = false, class: className = '' } = Astro.props;
+const width = Math.round((size * 80) / 64);
+const clipId = `logo-ground-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<span class:list={['logo', { 'logo--animate': animate }, className]}>
+    <svg class="logo-mark" width={width} height={size} viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+        <path class="logo-paren logo-paren--l" d="M14 6C4 18 4 46 14 58" />
+        <path class="logo-paren logo-paren--r" d="M66 6C76 18 76 46 66 58" />
+        <clipPath id={clipId}>
+            <rect x="0" y="0" width="80" height="52" />
+        </clipPath>
+        <g clip-path={`url(#${clipId})`}>
+            <path class="logo-peak" d="M18 52L35.5 14H44.5L62 52H52.2L48.6 44H31.4L27.8 52ZM34.6 36.6H45.4L40 23.8Z" fill-rule="evenodd" />
+        </g>
+    </svg>
+    {wordmark && <span class="logo-word">Associative Properties</span>}
+</span>
+
+<style>
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: inherit;
+}
+
+.logo-mark {
+    flex-shrink: 0;
+    display: block;
+    overflow: visible;
+}
+
+.logo-paren {
+    fill: none;
+    stroke: var(--logo-accent, var(--rose));
+    stroke-width: 6.4;
+    stroke-linecap: round;
+    transition: transform 0.45s var(--ease);
+}
+
+.logo-peak {
+    fill: currentColor;
+}
+
+.logo-word {
+    font-family: var(--font-display);
+    font-weight: 580;
+    font-size: 1.125rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+/* Hover: the group loosens, then settles */
+:global(a:hover) > .logo .logo-paren--l,
+:global(a:focus-visible) > .logo .logo-paren--l {
+    transform: translateX(-3px);
+}
+
+:global(a:hover) > .logo .logo-paren--r,
+:global(a:focus-visible) > .logo .logo-paren--r {
+    transform: translateX(3px);
+}
+
+/* Load sequence: the peak rises summit-first out of the ground, then the parentheses
+   close in around it. Fill mode "backwards" holds the start state during
+   each delay and hands control back to the static styles afterwards,
+   so the hover nudge still works. */
+@media (prefers-reduced-motion: no-preference) {
+    .logo--animate .logo-peak {
+        animation: logo-rise 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s backwards;
+    }
+
+    .logo--animate .logo-paren--l {
+        animation: logo-close-l 0.65s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.7s backwards;
+    }
+
+    .logo--animate .logo-paren--r {
+        animation: logo-close-r 0.65s cubic-bezier(0.2, 0.9, 0.3, 1.15) 0.7s backwards;
+    }
+}
+
+/* The peak climbs up through a fixed ground line at the base of the A */
+@keyframes logo-rise {
+    from { transform: translateY(40px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes logo-close-l {
+    from { transform: translateX(-14px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes logo-close-r {
+    from { transform: translateX(14px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+</style>

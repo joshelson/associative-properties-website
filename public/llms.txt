@@ -1,0 +1,37 @@
+# Associative Properties
+
+> Associative Properties is a design and design management firm serving Colorado and Utah since 2009. It brings interior design, architectural consulting, project management, creative direction, furniture design, and sustainable design into one working group for homeowners, commercial developers, and hospitality brands.
+
+The firm is named for the associative property of addition: (a + b) + c = a + (b + c). However a project's work is grouped or sequenced, one team is accountable for the finished result.
+
+Key facts:
+
+- Founded: 2009
+- Projects completed: 10+
+- Service area: Colorado and Utah, including Denver, Boulder, Aspen, Park City, and Salt Lake City
+- Clients: homeowners, commercial developers, hospitality brands
+- Phone: (303) 997-1264
+- Email: hello@associativeproperties.com
+- Website: https://associativeproperties.com/
+
+## Services
+
+- [Interior design](https://associativeproperties.com/#services): Space planning, furniture selection and custom pieces, color and material palettes, lighting design.
+- [Architectural consulting](https://associativeproperties.com/#services): Design and planning for new construction and renovation, construction documentation, building code compliance, contractor coordination.
+- [Project management](https://associativeproperties.com/#services): Timeline and budget control, contractor and vendor coordination, quality control and inspections, progress reporting.
+- [Creative direction](https://associativeproperties.com/#services): Brand identity development, visual merchandising, marketing materials, guest and customer experience.
+- [Furniture design](https://associativeproperties.com/#services): Custom furniture design, material selection and sourcing, collaboration with local artisans, installation and finishing.
+- [Sustainable design](https://associativeproperties.com/#services): Green building materials, energy-efficient systems, waste reduction, LEED certification support.
+
+## Process
+
+- [How projects run](https://associativeproperties.com/#process): Five steps. 1) Discovery: site visits, goals, budget, and timeline. 2) Concept: mood boards, early layouts, and design directions. 3) Refinement: materials, specifications, 3D renderings, and samples. 4) Implementation: contractor coordination, installation oversight, and quality control. 5) Reveal: final styling, photography, and ongoing support.
+
+## Contact
+
+- [Contact form](https://associativeproperties.com/#contact): Send project location, scope, timeline, and budget. The firm replies within two business days.
+
+## Optional
+
+- [About the studio](https://associativeproperties.com/#studio): Background on the firm, its name, and its design principles (mountain-inspired, sustainable, award-winning craftsmanship).
+- [Brand assets](https://associativeproperties.com/brand/logo-horizontal.svg): Logo files are published under /brand/ (mark.svg, logo-horizontal.svg, logo-stacked.svg, and reversed versions).

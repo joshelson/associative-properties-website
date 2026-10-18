@@ -1,29 +1,30 @@
 ---
+import Logo from './Logo.astro';
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
     <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <img src="/images/logo.png" alt="Associative Properties Logo" class="logo">
-                    <span>Associative Properties</span>
-                </div>
-                <p>Creating exceptional spaces across Colorado and Utah with passion, precision, and mountain-inspired design.</p>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <Logo size={56} wordmark={false} />
+                <p>Design and design management across Colorado and Utah, since 2009.</p>
             </div>
-            <div class="footer-section">
-                <h4>Services</h4>
+
+            <nav class="footer-col" aria-label="Services">
+                <h2>Services</h2>
                 <ul>
-                    <li><a href="#services">Interior Design</a></li>
-                    <li><a href="#services">Architectural Consulting</a></li>
-                    <li><a href="#services">Project Management</a></li>
-                    <li><a href="#services">Creative Direction</a></li>
-                    <li><a href="#services">Furniture Design</a></li>
-                    <li><a href="#services">Sustainable Design</a></li>
+                    <li><a href="#services">Interior design</a></li>
+                    <li><a href="#services">Architectural consulting</a></li>
+                    <li><a href="#services">Project management</a></li>
+                    <li><a href="#services">Creative direction</a></li>
+                    <li><a href="#services">Furniture design</a></li>
+                    <li><a href="#services">Sustainable design</a></li>
                 </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Service Areas</h4>
+            </nav>
+
+            <div class="footer-col">
+                <h2>Where we work</h2>
                 <ul>
                     <li>Denver, Colorado</li>
                     <li>Boulder, Colorado</li>
@@ -32,132 +33,114 @@
                     <li>Salt Lake City, Utah</li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
+
+            <div class="footer-col">
+                <h2>Contact</h2>
                 <ul>
-                    <li><a href="tel:3039971264">(303) 997-1264</a></li>
+                    <li><a href="tel:+13039971264">(303) 997-1264</a></li>
                     <li><a href="mailto:hello@associativeproperties.com">hello@associativeproperties.com</a></li>
-                    <li>Serving Colorado & Utah</li>
                 </ul>
             </div>
         </div>
+
+        <div class="footer-wordmark" aria-hidden="true">Associative Properties</div>
+
         <div class="footer-bottom">
-            <p>&copy; 2025 Associative Properties. All rights reserved.</p>
-            <p>Designing the future, one space at a time.</p>
+            <p>&copy; {year} Associative Properties. All rights reserved.</p>
+            <p><span class="math">(a + b) + c = a + (b + c)</span></p>
         </div>
     </div>
 </footer>
 
 <style>
 .footer {
-    background: var(--color-ink);
-    color: var(--color-cream);
-    padding: 5rem 0 2rem;
+    background: var(--granite);
+    color: var(--snow);
+    padding: clamp(64px, 9vw, 112px) 0 2rem;
+    --logo-accent: var(--rose-light);
+    overflow: hidden;
 }
 
-.footer-content {
+.footer-top {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.35fr);
     gap: 2.5rem;
-    margin-bottom: 3rem;
 }
 
-.footer .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 60px;
+.footer-brand p {
+    margin-top: 1.25rem;
+    max-width: 28ch;
+    color: var(--mist-light);
+    font-size: 1.0625rem;
 }
 
-@media (max-width: 1200px) {
-    .footer .container {
-        padding: 0 50px;
-    }
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 1.5rem;
-}
-
-.footer-logo .logo {
-    width: 36px;
-    height: 36px;
-    filter: brightness(0) invert(1);
-}
-
-.footer-logo span {
-    font-family: var(--font-display);
+.footer-col h2 {
+    font-size: 0.9375rem;
     font-weight: 500;
-    font-size: 1.25rem;
+    letter-spacing: 0;
+    color: var(--mist-light);
+    margin-bottom: 1rem;
 }
 
-.footer-section p {
-    color: var(--color-ash);
-    margin-bottom: 2rem;
-    font-size: 0.9375rem;
-    line-height: 1.7;
-}
-
-.footer-section h4 {
-    color: var(--color-cream);
-    margin-bottom: 1.25rem;
-    font-family: var(--font-primary);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-}
-
-.footer-section ul {
+.footer-col ul {
     list-style: none;
+    font-family: var(--font-display);
+    font-size: 1rem;
 }
 
-.footer-section li {
-    margin-bottom: 0.625rem;
-    color: var(--color-ash);
-    font-size: 0.9375rem;
+.footer-col li + li {
+    margin-top: 0.45rem;
 }
 
-.footer-section a {
-    color: var(--color-ash);
+.footer-col a {
     text-decoration: none;
-    transition: var(--transition);
-    font-size: 0.9375rem;
+    overflow-wrap: anywhere;
 }
 
-.footer-section a:hover {
-    color: var(--color-brass);
+.footer-col a:hover {
+    color: var(--rose-light);
+}
+
+.footer-wordmark {
+    margin: clamp(3rem, 7vw, 5rem) 0 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 9.4vw, 9rem);
+    letter-spacing: -0.045em;
+    line-height: 0.9;
+    white-space: nowrap;
+    color: rgba(241, 244, 243, 0.08);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-light);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    color: var(--mist-light);
 }
 
-.footer-bottom p {
-    color: var(--color-stone);
-    margin-bottom: 0.25rem;
-    font-size: 0.8125rem;
+.footer-bottom .math {
+    color: var(--rose-light);
 }
 
-@media (max-width: 1024px) {
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
+@media (max-width: 1180px) {
+    .footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
     }
 }
 
-@media (max-width: 768px) {
-    .footer-content {
+@media (max-width: 520px) {
+    .footer-top {
         grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-logo {
-        justify-content: center;
     }
 }
 </style>

@@ -1,272 +1,194 @@
 ---
+import Logo from './Logo.astro';
+const links = [
+    { href: '#studio', label: 'Studio' },
+    { href: '#services', label: 'Services' },
+    { href: '#process', label: 'Process' },
+];
 ---
 
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo">
-            <img src="/images/logo.png" alt="Associative Properties Logo" class="logo">
-            <span class="logo-text">Associative Properties</span>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+<header class="nav" data-nav>
+    <div class="nav-inner container">
+        <a href="#top" class="nav-brand" aria-label="Associative Properties, back to top">
+            <Logo size={36} animate />
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+            <span class="sr-only">Menu</span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+        </button>
+        <nav id="nav-menu" class="nav-menu" aria-label="Main">
+            <ul>
+                {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+            </ul>
+            <a href="#contact" class="btn btn-rose nav-cta">Start a project</a>
+        </nav>
     </div>
-</nav>
+</header>
 
 <style>
-.navbar {
+.nav {
     position: fixed;
-    top: 0;
-    width: 100%;
-    background: transparent;
+    inset: 0 0 auto;
     z-index: 1000;
-    padding: 1.5rem 0;
-    transition: var(--transition);
+    color: var(--snow);
+    --logo-accent: var(--rose-light);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-.navbar.scrolled {
-    background: rgba(250, 248, 245, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-    padding: 1rem 0;
+.nav.is-solid {
+    background: rgba(241, 244, 243, 0.92);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: var(--granite);
+    --logo-accent: var(--rose);
+    box-shadow: 0 1px 0 var(--line);
 }
 
-.nav-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 60px;
+.nav-inner {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
+    height: 76px;
 }
 
-@media (max-width: 1200px) {
-    .nav-container {
-        padding: 0 50px;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 30px;
-    }
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.nav-logo .logo {
-    width: 38px;
-    height: 38px;
-    transition: var(--transition);
-}
-
-.nav-logo:hover .logo {
-    transform: scale(1.05);
-}
-
-/* Default (over dark hero): light logo text */
-.logo-text {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.25rem;
-    color: var(--color-cream);
-    letter-spacing: 0.02em;
-    transition: var(--transition);
-}
-
-/* When scrolled (over light bg): dark logo text */
-.navbar.scrolled .logo-text {
-    color: var(--color-ink);
-}
-
-/* Logo filter: invert when over dark hero */
-.navbar:not(.scrolled) .nav-logo .logo {
-    filter: brightness(0) invert(1);
+.nav-brand {
+    text-decoration: none;
 }
 
 .nav-menu {
     display: flex;
+    align-items: center;
+    gap: 2.25rem;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 2rem;
     list-style: none;
-    gap: 2.5rem;
 }
 
-.nav-menu a {
+.nav-menu ul a {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 450;
     text-decoration: none;
-    color: rgba(250, 248, 245, 0.85);
-    font-weight: 500;
-    font-size: 0.8125rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    transition: var(--transition);
-    position: relative;
-    padding: 8px 0;
-    font-variant: small-caps;
+    opacity: 0.85;
+    transition: opacity 0.2s;
 }
 
-.navbar.scrolled .nav-menu a {
-    color: var(--color-stone);
+.nav-menu ul a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: var(--rose-light);
 }
 
-.nav-menu a:hover {
-    color: var(--color-brass);
+.nav-cta {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.9375rem;
 }
 
-.navbar.scrolled .nav-menu a:hover {
-    color: var(--color-brass);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--color-brass);
-    transition: var(--transition);
-}
-
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
-
-.hamburger {
+.nav-toggle {
     display: none;
-    flex-direction: column;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    background: none;
+    color: inherit;
     cursor: pointer;
-    gap: 5px;
+    position: relative;
 }
 
-.hamburger span {
-    width: 24px;
+.nav-toggle-bar {
+    position: absolute;
+    left: 11px;
+    width: 22px;
     height: 2px;
-    background: var(--color-cream);
-    transition: var(--transition);
+    background: currentColor;
+    transition: transform 0.3s var(--ease);
 }
 
-.navbar.scrolled .hamburger span {
-    background: var(--color-ink);
+.nav-toggle-bar:nth-of-type(2) { top: 18px; }
+.nav-toggle-bar:nth-of-type(3) { top: 25px; }
+
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-of-type(2) {
+    transform: translateY(3.5px) rotate(45deg);
 }
 
-@media (max-width: 768px) {
+.nav-toggle[aria-expanded='true'] .nav-toggle-bar:nth-of-type(3) {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
+
+@media (max-width: 820px) {
+    .nav-toggle {
+        display: block;
+    }
+
     .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 72px;
-        flex-direction: column;
-        background: rgba(250, 248, 245, 0.98);
-        backdrop-filter: blur(20px);
-        width: 100%;
-        text-align: center;
-        transition: var(--transition);
-        box-shadow: var(--shadow-md);
-        padding: 2rem 0;
-        gap: 0;
-    }
-
-    .nav-menu.active {
+        position: absolute;
+        top: 76px;
         left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        padding: 1.5rem var(--gutter) 2rem;
+        background: var(--snow);
+        color: var(--granite);
+        box-shadow: 0 1px 0 var(--line), 0 20px 40px rgba(34, 39, 43, 0.12);
+        display: none;
     }
 
-    .nav-menu a {
-        color: var(--color-ink);
-    }
-
-    .nav-menu li {
-        margin: 0;
-        padding: 1rem 0;
-        width: 100%;
-    }
-
-    .hamburger {
+    .nav-menu.is-open {
         display: flex;
     }
 
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
     }
 
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
+    .nav-menu ul a {
+        display: block;
+        padding: 0.85rem 0;
+        font-size: 1.25rem;
+        border-bottom: 1px solid var(--line);
     }
 
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+    .nav.menu-open {
+        background: var(--snow);
+        color: var(--granite);
+        --logo-accent: var(--rose);
     }
 }
 </style>
 
 <script>
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navbar = document.querySelector('.navbar');
+const nav = document.querySelector<HTMLElement>('[data-nav]');
+const toggle = nav?.querySelector<HTMLButtonElement>('.nav-toggle');
+const menu = nav?.querySelector<HTMLElement>('.nav-menu');
 
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+if (nav && toggle && menu) {
+    const setOpen = (open: boolean) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.classList.toggle('is-open', open);
+        nav.classList.toggle('menu-open', open);
+    };
+
+    toggle.addEventListener('click', () => {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
     });
 
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
+    menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setOpen(false);
     });
 
-    document.addEventListener('click', (e) => {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
+    const onScroll = () => nav.classList.toggle('is-solid', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 }
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Active nav link
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-window.addEventListener('scroll', function() {
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        const sectionHeight = section.clientHeight;
-
-        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
 </script>
